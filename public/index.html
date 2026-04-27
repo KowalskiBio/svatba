@@ -798,18 +798,24 @@
         left: 20px;
       }
 
+      .timeline-item>div[style*="flex:1"] {
+        display: none !important;
+      }
+
       .timeline-item,
       .timeline-item:nth-child(even) {
         flex-direction: row !important;
       }
 
-      .timeline-item:nth-child(odd) .tl-content,
-      .timeline-item:nth-child(even) .tl-content {
-        text-align: left !important;
+      .tl-dot {
+        order: 1;
+        margin-top: 1.8rem;
       }
 
-      .tl-dot {
-        margin-top: 1.8rem;
+      .timeline-item:nth-child(odd) .tl-content,
+      .timeline-item:nth-child(even) .tl-content {
+        order: 2;
+        text-align: left !important;
       }
     }
   </style>
@@ -902,7 +908,7 @@
       Hodně nám samozřejmě pomohlo i to, že jsme byli spolužáci a seděli spolu na přednáškách. Asi není nutné dodávat,
       že nám toho občas dost uteklo… hehe. Společně jsme ale zvládli všechna zkoušková období, státnice i nástup do
       práce.
-      Vystudovali jsme obor Genomika a proteomika a od začátku jsme to měli hezky rozdělené – Nela se specializovala na
+      Vystudovali jsme spolu a od začátku jsme to měli hezky rozdělené – Nela se specializovala na
       proteomiku, Vojta na genomiku. A tahle týmová spolupráce nám zůstala dodnes: Nela má vždycky pravdu a Vojta
       vždycky souhlasí.
       <span class="story-flower">✿</span>
@@ -941,13 +947,13 @@
         </div>
 
         <div class="timeline-item">
-          <div style="flex:1"></div>
-          <div class="tl-dot"></div>
           <div class="tl-content">
             <div class="tl-time">14:00</div>
             <div class="tl-title">Obřad</div>
             <p class="tl-desc">Slavnostní sňatek.</p>
           </div>
+          <div class="tl-dot"></div>
+          <div style="flex:1"></div>
         </div>
 
         <div class="timeline-item">
@@ -1078,7 +1084,7 @@
           <select id="rsvp-attendance" required>
             <option value="">— vyberte —</option>
             <option value="yes">Ano, přijdu!</option>
-            <option value="no">Moc mě to mrzí, nicméně se nemohu zúčastnit, což je mi opravdu líto/option>
+            <option value="no">Moc mě to mrzí, nicméně se nemohu zúčastnit, což je mi opravdu líto</option>
           </select>
         </div>
         <div class="form-group">
