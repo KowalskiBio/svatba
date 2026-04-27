@@ -104,6 +104,16 @@
       /* GSAP fades in */
     }
 
+    /* Background photo with soft white veil so text stays readable */
+    .hero-photo-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(253, 252, 248, 0.62), rgba(253, 252, 248, 0.62)),
+        url('IMG_0838.jpeg') center/cover no-repeat;
+      z-index: 0;
+    }
+
     /* Corner ornaments */
     .hero-corners,
     .hero-corners-b {
@@ -212,7 +222,7 @@
       font-size: clamp(0.85rem, 2.4vw, 1.1rem);
       font-style: italic;
       font-weight: 300;
-      color: var(--light);
+      color: var(--text);
       letter-spacing: 0.28em;
       margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
       opacity: 0;
@@ -248,7 +258,7 @@
       font-weight: 400;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--text);
       font-style: normal;
     }
 
@@ -270,8 +280,8 @@
     .hero-cta {
       display: inline-block;
       padding: 0.875rem 2.75rem;
-      border: 1px solid rgba(168, 212, 240, .6);
-      color: var(--light);
+      border: 1px solid rgba(44, 62, 80, 0.6);
+      color: var(--text);
       font-family: var(--sans);
       font-size: 0.625rem;
       font-weight: 400;
@@ -310,7 +320,7 @@
       font-size: .65rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--text);
     }
 
     .scroll-arrow {
@@ -833,6 +843,7 @@
 
   <!-- HERO -->
   <section id="hero" aria-label="Svatební oznámení Nely a Vojty">
+    <div class="hero-photo-bg" aria-hidden="true"></div>
     <div class="hero-corners" aria-hidden="true"></div>
     <div class="hero-corners-b" aria-hidden="true"></div>
 
@@ -861,10 +872,6 @@
         <time datetime="2026-06-20">20. 6. 2026</time>
         <span class="hero-meta-dot" aria-hidden="true"></span>
         <address>Zádveřice</address>
-      </div>
-
-      <div class="hero-cta-wrap" id="hero-cta-wrap">
-        <a href="#countdown" class="hero-cta">Zobrazit více</a>
       </div>
     </div>
 
@@ -939,8 +946,8 @@
           <div class="tl-content">
             <div class="tl-time">12:00–13:00</div>
             <div class="tl-title">Příjezd hostů</div>
-            <p class="tl-desc">Přivítání, možná nějaký koláček. Můžete přijet na místo hostiny a oslavy,
-              v tomto čase si Vás vyzvedneme. Můžete si tam nechat věci a poté jet na místo obřadu (cca 5 minut autem).
+            <p class="tl-desc">Přivítání, možná nějaký koláček. Můžete přijet na místo hostiny a oslavy. Je možné si tam
+              nechat věci a poté jet na místo obřadu (cca 5 minut autem).
               Nebo můžete přijet rovnou na místo obřadu a počkat si tam.
             </p>
           </div>
@@ -1266,7 +1273,7 @@
         hero.style.transition = 'opacity 0.8s ease';
         requestAnimationFrame(() => { hero.style.opacity = '1'; });
         ['#hero-name1', '#hero-name2', '.hero-connector', '.hero-c-rule',
-          '#hero-subtitle', '#hero-meta-rule', '#hero-meta', '#hero-cta-wrap',
+          '#hero-subtitle', '#hero-meta-rule', '#hero-meta',
           '.hero-corners', '.hero-corners-b', '#hero-scroll-hint'].forEach((sel, i) => {
             document.querySelectorAll(sel).forEach(el => {
               el.style.cssText += `transition:opacity .6s ease ${i * .1}s,transform .6s ease ${i * .1}s;opacity:1;transform:none;`;
@@ -1286,7 +1293,6 @@
         .to('#hero-subtitle', { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, 0.88)
         .to('#hero-meta-rule', { opacity: 1, scaleY: 1, duration: 0.4, ease: 'power2.inOut' }, 1.02)
         .to('#hero-meta', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 1.12)
-        .to('#hero-cta-wrap', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 1.26)
         .to('#hero-scroll-hint', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.42);
     })();
   </script>
