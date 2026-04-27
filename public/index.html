@@ -1036,7 +1036,7 @@
         <span class="card-icon">🎁</span>
         <h3>Dary</h3>
         <p>
-          Nejvíce oceníme, když budete s námi. Pomůže nám a potěší nás ale i
+          Nejvíce oceníme, když budete s námi. Pomůže nám a potěší nás i
           finanční příspěvek, hihi.
         </p>
       </div>
@@ -1153,7 +1153,14 @@
     for (let i = 0; i < 6; i++) {
       const dna = document.createElement('div');
       dna.classList.add('petal');
-      dna.innerHTML = '🧬';
+      dna.innerHTML = `<svg viewBox="0 0 24 24" style="width:1.2em; height:1.2em;" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 6 2 C 6 10, 18 14, 18 22" fill="none" stroke="var(--blue2)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 18 2 C 18 10, 6 14, 6 22" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="7" y1="5" x2="17" y2="5" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="9" x2="14" y2="9" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="15" x2="14" y2="15" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="7" y1="19" x2="17" y2="19" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`;
       const size = 16 + Math.random() * 16;
       dna.style.cssText = `
       font-size:${size}px;
