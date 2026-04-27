@@ -927,7 +927,7 @@
           <div class="tl-content">
             <div class="tl-time">15:00</div>
             <div class="tl-title">Obřad</div>
-            <p class="tl-desc">Slavnostní sňatek v kostele.<br>Adresa: 763 12 Zádveřice-Raková-Vizovice</p>
+            <p class="tl-desc">Slavnostní sňatek.</p>
           </div>
         </div>
 
@@ -953,8 +953,18 @@
     <div class="cards">
 
       <div class="card">
+        <span class="card-icon">⛪</span>
+        <h3>Místo obřadu</h3>
+        <p>
+          Kostel<br />
+          763 12 Zádveřice-Raková-Vizovice<br /><br />
+          <a href="https://maps.google.com/?q=763+12+Zádveřice-Raková-Vizovice" target="_blank">Zobrazit na mapě →</a>
+        </p>
+      </div>
+
+      <div class="card">
         <span class="card-icon">🏰</span>
-        <h3>Místo konání</h3>
+        <h3>Místo oslavy</h3>
         <p>
           Chochol — Zádveřice 120<br />
           Zádveřice-Raková<br /><br />
@@ -1030,11 +1040,11 @@
       <div class="form-row">
         <div class="form-group">
           <label>Jméno</label>
-          <input type="text" id="rsvp-first-name" placeholder="Nela Nováková" required />
+          <input type="text" id="rsvp-first-name" placeholder="Nela" required />
         </div>
         <div class="form-group">
           <label>Příjmení</label>
-          <input type="text" id="rsvp-last-name" placeholder="..." required />
+          <input type="text" id="rsvp-last-name" placeholder="Rejtarová" required />
         </div>
       </div>
 
@@ -1057,7 +1067,6 @@
           <select id="rsvp-guests">
             <option value="1">1 osoba</option>
             <option value="2">2 osoby</option>
-            <option value="3">3 osoby</option>
           </select>
         </div>
       </div>
@@ -1120,7 +1129,7 @@
       const h = Math.floor((diff % 86400000) / 3600000);
       const m = Math.floor((diff % 3600000) / 60000);
       const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('cd-days').textContent = String(d).padStart(3, '0');
+      document.getElementById('cd-days').textContent = String(d);
       document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
       document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
       document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
