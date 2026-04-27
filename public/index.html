@@ -1105,9 +1105,19 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label>Diety &amp; alergie (volitelné)</label>
-        <input type="text" id="rsvp-diet" placeholder="vegetarián, bezlepkové, …" />
+      <div class="form-row">
+        <div class="form-group">
+          <label>Diety &amp; alergie (volitelné)</label>
+          <input type="text" id="rsvp-diet" placeholder="vegetarián, bezlepkové, …" />
+        </div>
+        <div class="form-group">
+          <label>Chci/chceme přespat</label>
+          <select id="rsvp-sleepover" required>
+            <option value="">— vyberte —</option>
+            <option value="yes">Ano</option>
+            <option value="no">Ne</option>
+          </select>
+        </div>
       </div>
 
       <div class="form-group">
@@ -1233,6 +1243,7 @@
         attendance: document.getElementById('rsvp-attendance').value,
         guests_count: parseInt(document.getElementById('rsvp-guests').value, 10),
         diet: document.getElementById('rsvp-diet').value,
+        sleepover: document.getElementById('rsvp-sleepover').value,
         message: document.getElementById('rsvp-message').value
       };
 
