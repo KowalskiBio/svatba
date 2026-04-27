@@ -24,6 +24,8 @@ def init_db():
             guests_count INTEGER NOT NULL,
             diet TEXT,
             sleepover TEXT,
+            transport TEXT,
+            car_sharing TEXT,
             message TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
@@ -42,6 +44,8 @@ class RSVPData(BaseModel):
     guests_count: int
     diet: str = ""
     sleepover: str = ""
+    transport: str = ""
+    car_sharing: str = ""
     message: str = ""
 
 @app.post("/api/rsvp")
@@ -50,8 +54,8 @@ async def handle_rsvp(rsvp: RSVPData):
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
         cursor.execute('''
-            INSERT INTO rsvps (first_name, last_name, email, attendance, guests_count, diet, sleepover, message)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO rsvps (first_name, last_name, email, attendance, guests_count, diet, sleepover, transport, car_sharing, message)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             rsvp.first_name,
             rsvp.last_name,
@@ -60,6 +64,8 @@ async def handle_rsvp(rsvp: RSVPData):
             rsvp.guests_count,
             rsvp.diet,
             rsvp.sleepover,
+            rsvp.transport,
+            rsvp.car_sharing,
             rsvp.message
         ))
         conn.commit()

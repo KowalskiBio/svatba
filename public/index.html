@@ -1120,6 +1120,25 @@
         </div>
       </div>
 
+      <div class="form-row">
+        <div class="form-group">
+          <label>Způsob dopravy</label>
+          <select id="rsvp-transport" required onchange="document.getElementById('rsvp-car-sharing-group').style.display = this.value === 'auto' ? 'block' : 'none'">
+            <option value="">— vyberte —</option>
+            <option value="auto">Auto</option>
+            <option value="verejna_doprava">Veřejná doprava / Jinak</option>
+          </select>
+        </div>
+        <div class="form-group" id="rsvp-car-sharing-group" style="display: none;">
+          <label>Ochota někoho svézt (zejm. z HK)</label>
+          <select id="rsvp-car-sharing">
+            <option value="">— vyberte —</option>
+            <option value="ano">Rád(a) někoho svezu</option>
+            <option value="ne">Mám plno / nechci nikoho brát</option>
+          </select>
+        </div>
+      </div>
+
       <div class="form-group">
         <label>Vzkaz novomanželům</label>
         <textarea id="rsvp-message" placeholder="Něco hezkého nám napište…"></textarea>
@@ -1244,6 +1263,8 @@
         guests_count: parseInt(document.getElementById('rsvp-guests').value, 10),
         diet: document.getElementById('rsvp-diet').value,
         sleepover: document.getElementById('rsvp-sleepover').value,
+        transport: document.getElementById('rsvp-transport').value,
+        car_sharing: document.getElementById('rsvp-car-sharing').value,
         message: document.getElementById('rsvp-message').value
       };
 
