@@ -903,8 +903,10 @@
     <p class="section-label">Náš příběh</p>
     <h2 class="section-title">Jak to všechno začalo</h2>
     <p class="story-body">
-      Potkali jsme se na oslavě narozenin kamaráda a od první chvíle bylo oběma jasné, že si rozumíme.
-      Naše první rande na střeše Ústavu biochemie MUNI to jen potvrdilo – a pak už to šlo skoro samo.
+      Potkali jsme se před začátkem semestru na oslavě a od první chvíle bylo oběma jasné, že si rozumíme.
+      Naše první tajné noční rande na střeše Ústavu biochemie mělo za následek dvě věci: zamilovali jsme se do sebe a
+      Vojta
+      onemocněl, protože mu byla zima, ale nechtěl to přiznat.
       Hodně nám samozřejmě pomohlo i to, že jsme byli spolužáci a seděli spolu na přednáškách. Asi není nutné dodávat,
       že nám toho občas dost uteklo… hehe. Společně jsme ale zvládli všechna zkoušková období, státnice i nástup do
       práce.
@@ -1084,7 +1086,7 @@
           <select id="rsvp-attendance" required>
             <option value="">— vyberte —</option>
             <option value="yes">Ano, přijdu!</option>
-            <option value="no">Moc mě to mrzí, nicméně se nemohu zúčastnit, což je mi opravdu líto</option>
+            <option value="no">Bohužel ne :(</option>
           </select>
         </div>
         <div class="form-group">
@@ -1119,10 +1121,12 @@
   </footer>
 
   <script>
-    // ── Floating petals ──
+    // ── Floating petals & DNA ──
     const hero = document.getElementById('hero');
     const petalColors = ['#a8d4f0', '#d6eaf8', '#f9e07a', '#e8c840', '#c5e5f5', '#fef3c7'];
-    for (let i = 0; i < 18; i++) {
+
+    // Create leaves
+    for (let i = 0; i < 15; i++) {
       const p = document.createElement('div');
       p.classList.add('petal');
       const size = 10 + Math.random() * 18;
@@ -1136,6 +1140,25 @@
       border-radius:${Math.random() > 0.5 ? '50% 0 50% 0' : '0 50% 0 50%'};
     `;
       hero.appendChild(p);
+    }
+
+    // Create DNA helices
+    for (let i = 0; i < 6; i++) {
+      const dna = document.createElement('div');
+      dna.classList.add('petal');
+      dna.innerHTML = '🧬';
+      const size = 16 + Math.random() * 16;
+      dna.style.cssText = `
+      font-size:${size}px;
+      left:${Math.random() * 100}%;
+      top:${-Math.random() * 20}%;
+      animation-duration:${9 + Math.random() * 14}s;
+      animation-delay:${Math.random() * 10}s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `;
+      hero.appendChild(dna);
     }
 
     // ── Countdown ──
